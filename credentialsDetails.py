@@ -1,6 +1,6 @@
 
 import string,random
-import pyperclip
+# import pyperclip
 from userDetails import UserAccount
 class UserCredentials:
     ''' Create credentials class to help create new objects of credentials   '''
@@ -43,14 +43,14 @@ class UserCredentials:
     def findUsercredential(cls,userAccount):
         '''This method finds user credential that matches account name  passed in'''
         for userCredential in cls.credentials:
-            if userCredential.userAccount == userAccount:
+            if userCredential.myAccount == userAccount:
                 return userCredential
     #-----------------------------------------------------------------------------#
     @classmethod
-    def doCredentialsExist(cls,userAccount):
+    def doCredentialsExist(cls,account):
         ''' this checks if user credentials exists in the credentials array'''
         for item in cls.credentials:
-            if item.userAccount ==userAccount:
+            if item.myAccount == account:
                 return True
         return False 
     #-----------------------------------------------------------------------------#                       
