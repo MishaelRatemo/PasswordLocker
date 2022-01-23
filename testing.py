@@ -1,6 +1,7 @@
+from operator import le
 import unittest
 from userDetails import  UserAccount
-# from credentialsDetails import Credentials
+from credentialsDetails import UserCredentials
 
 class TestUserAccount (unittest.TestCase):
     '''
@@ -57,10 +58,70 @@ class TestUserAccount (unittest.TestCase):
         self.newUserAccount.saveUserAcc()
         testUserAcc = UserAccount('TestUserFirstname','TestUserMiddleName','TestUserLastName','TestUsername', 'test@gmail.com','testPassword')
         testUserAcc.saveUserAcc()
-        self.newUserAccount.deleteUserAcc()
+        self.newUserAccount.deleteUserAccount()
         self.assertEqual(len(UserAccount.userAccounts),1)
-     #*************************************************************#
+        
+ #*******---------------************----------------********************#
+class TestUserCredentials(unittest.TestCase):
+    def setUp(self):
+        ''' method to run before individual test cases run'''
+        self.newUserCredential =UserCredentials('twitter','@Mishael','mixxy@123')
     
+     #*************************************************************#  
+    def tearDown(self):
+        '''tearDown method that does clean up after each test case has run. '''   
+        UserCredentials.credentials=[]
+        
+     #*************************************************************#         
+    def test_init(self):
+         '''test_init test case to test if the new user cred..ls is inistantiated properly'''
+         self.assertEqual(self.newUserCredential.myAccount,'twitter')
+         self.assertEqual(self.newUserCredential.username,'@Mishael')
+         self.assertEqual(self.newUserCredential.login_pass,'mixxy@123')
+     #*************************************************************#  
+    def test_saveCredentials(self):
+        self.newUserCredential.saveCredentials()
+        self.assertEqual(len(UserCredentials.credentials),1)
+     #*************************************************************#  
+    def testSaveMultipleUserAcc(self):
+        ''' testing if we can save many user acc credentials'''
+        self.newUserCredential.saveCredentials()
+        testUserCredential =UserCredentials('instagram','Ratemo','insta@#4')
+        testUserCredential.saveCredentials()
+        self.assertEqual(len(UserCredentials.credentials),2)
+     #*************************************************************#  
+    def test_deleteUserCred(self):
+        ''' testing if we can actully delete user acc credentials''' 
+        self.newUserCredential.saveCredentials()
+        testUserCredential =UserCredentials('instagram','Ratemo','insta@#4')
+        testUserCredential.saveCredentials()
+        self.newUserCredential.deleteUserCred()
+        self.assertEqual(len(UserCredentials.credentials),1)
+     #*************************************************************#   
+    def test_doCredentialsExist(self):
+        self.newUserCredential.saveCredentials()
+        testUserCredential =UserCredentials('instagram','Ratemo','insta@#4')
+        testUserCredential.saveCredentials()
+        userCredentialExist= UserCredentials.doCredentialsExist('instagram')
+        self.assertTrue(userCredentialExist)  
+    def test_findUsercredential(self):
+        '''testing if user can actually find a user acc credential'''
+        self.newUserCredential.saveCredentials()
+        testUserCredential =UserCredentials('instagram','Ratemo','insta@#4')
+        testUserCredential.saveCredentials()
+        userCred = UserCredentials.findUsercredential('instagram')
+        self.assertEqual(userCred.myAccount, testUserCredential.myAccount)
+        
+        
+         
+         
+         
+        
+        
+            
+        
+        
+
         
         
         
