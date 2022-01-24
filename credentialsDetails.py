@@ -18,7 +18,7 @@ class UserCredentials:
      #-----------------------------------------------------------------------------# 
     def __init__(self,myAccount,username,login_pass):
         '''function that instantiates userAccount credentials to be stored'''
-        self.myAccount = myAccount
+        self.myAccount = myAccount        
         self.username = username
         self.login_pass=login_pass
         
