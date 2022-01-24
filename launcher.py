@@ -28,7 +28,7 @@ def delCredential(credentials):
 def displayUserCredentials():
     return UserCredentials.displayUserCredentials()
 def findUserCredentials(userAccount):
-    return UserCredentials.findUsercredential()
+    return UserCredentials.findUsercredential(userAccount)
 def doCredentialsExist(account):
     return UserCredentials.doCredentialsExist(account)
 def copyPass(userAccount):
@@ -131,7 +131,7 @@ def myPasswordLocker():
                 print(f'Account : <<< {searchAcc.myAccount} >>> \n')
                 print(f'Username: <<< { searchAcc.username} >>> \n')
             else:
-                print(f'{accountName} doesnt exist \n')
+                print(f'accountName doesnt exist \n')
         elif command == 'GP':
             password = systemGeneratedPassword()
             print(f'Your generated password is : <<< {password} >>>')
@@ -141,7 +141,7 @@ def myPasswordLocker():
             if findUserCredentials(accountName):
                 searchAcc = findUserCredentials(accountName)
                 print('')
-                searchAcc.deleteUserCredentials()
+                searchAcc.deleteUserCred()
                 print(f'{ searchAcc.myAccount} deleted successfully \n')
             else:
                 print(f'{accountName} cannot be deleted because it does not exist \n')
