@@ -146,7 +146,7 @@ def myPasswordLocker():
             else:
                 print(f'{accountName} cannot be deleted because it does not exist \n')
         elif command == 'X':
-            print(' Thank for trusting Us. See you next time. Nice time')
+            print(' Thank for trusting Us. See you next time. Nice time\n\n '+'=*'*20 +'\n')
             break
         else:
             print('Oooops!!! Invalid command. Retry')
