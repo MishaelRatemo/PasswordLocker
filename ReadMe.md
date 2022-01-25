@@ -1,7 +1,7 @@
 # PasswordLocker -Python
 ## Author
 
-Mishael
+~ Mishael Ratemo
 ## Description
 
 A python application that manages login and signup details of a use for various accounts i.e. username and passwords for each account. It also stores the passwords and auto-generates a unique password of 10 characters for a user if they do not want to typee the passwords .
