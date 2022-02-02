@@ -1,6 +1,6 @@
 
 import string,random
-import pyperclip
+# import pyperclip
 from userDetails import UserAccount
 class UserCredentials:
     ''' Create credentials class to help create new objects of credentials   '''

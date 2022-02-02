@@ -2,10 +2,10 @@ from userDetails import UserAccount
 from  credentialsDetails import  UserCredentials
 
 def welcome():
-    print('__  __  __  _____ ')
-    print('|| / \\  || ||===')
-    print('||//  \\ || ||=== ')
-    print('|_/    \_| ||=== ')
+    print('             __  __  __  _____  ')
+    print('             || / \\  || ||=== ||')
+    print('             ||//  \\ || ||=== || ')
+    print('             |_/    \_| ||=== ||====')
 welcome()
 def createNewUserAccount(f_name,m_name,l_name,username,usermail,login_pass):
     newUserAccount = UserAccount(f_name,m_name,l_name,username,usermail,login_pass,)
